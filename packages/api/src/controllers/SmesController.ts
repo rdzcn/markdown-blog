@@ -1,6 +1,6 @@
 import { notFound } from '@hapi/boom';
 import { Request, Response } from 'express';
-import smes from 'src/data/smes.json';
+import smes from '../data/smes.json';
 
 const getSme = async (req: Request, res: Response) => {
   const smeId = req.body.userData.smeId;

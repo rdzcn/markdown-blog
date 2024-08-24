@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import { z } from 'zod';
-import data from 'src/data/transactions.json';
+import data from '../data/transactions.json';
 import {
   Transaction,
   TransactionStatusEnum,

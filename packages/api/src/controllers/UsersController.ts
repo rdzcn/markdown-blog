@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import users from "src/data/users.json";
+import users from "../data/users.json";
 
 const getUsers = (req: Request, res: Response) => {
   const smeId = req.body.userData.smeId;
