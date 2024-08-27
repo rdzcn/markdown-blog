@@ -11,10 +11,12 @@ import { ToastProvider } from "./contexts/toast.context";
 import GlobalStyles from "./assets/styles/global.styles";
 import Login, { loginLoader } from "./pages/login/Login";
 import Dashboard from "./pages/dashboard/Dashboard";
+import Articles from "./pages/articles/Articles";
 import Layout from "./components/layout/Layout";
 import ProtectedRoute, {
   rootLoader,
 } from "./components/protectedRoute/ProtectedRoute";
+import "./main.css";
 
 // Move this to a separate file
 const router = createBrowserRouter([
@@ -32,6 +34,10 @@ const router = createBrowserRouter([
       {
         path: "layout",
         element: <Layout />,
+      },
+      {
+        path: "articles",
+        element: <Articles />,
       },
       {
         path: "/*",
