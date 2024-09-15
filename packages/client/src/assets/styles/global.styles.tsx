@@ -1,12 +1,12 @@
 import { GlobalStyles, useTheme } from "@mui/material";
 
 const MuiGlobal = () => {
-  const theme = useTheme();
+	const theme = useTheme();
 
-  return (
-    <>
-      <GlobalStyles
-        styles={`
+	return (
+		<>
+			<GlobalStyles
+				styles={`
         body {
           margin: 0;
           color:  ${theme.palette.common.black};
@@ -74,8 +74,8 @@ const MuiGlobal = () => {
           height: 60px !important;
         }
       `}
-      />
-    </>
-  );
+			/>
+		</>
+	);
 };
 export default MuiGlobal;

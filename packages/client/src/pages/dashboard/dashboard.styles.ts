@@ -1,5 +1,5 @@
-import { styled } from "@mui/material";
 import { Txt } from "@contexts/texts.context";
+import { styled } from "@mui/material";
 
 export const DashboardWrapper = styled("div")`
   display: flex;

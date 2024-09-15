@@ -7,12 +7,12 @@ const MerchantLogoImage = styled("img")`
 `;
 
 interface MerchantLogoProps {
-  iconUrl: string;
-  name: string;
+	iconUrl: string;
+	name: string;
 }
 
 const MerchantLogo = ({ iconUrl, name }: MerchantLogoProps) => {
-  return <MerchantLogoImage src={iconUrl} alt={name} />;
+	return <MerchantLogoImage src={iconUrl} alt={name} />;
 };
 
 export default MerchantLogo;

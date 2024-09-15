@@ -1,5 +1,5 @@
-import { styled, Button } from "@mui/material";
 import LoginBanner from "@assets/loginBackground.jpg";
+import { Button, styled } from "@mui/material";
 
 export const AuthorizationWrapper = styled("div")`
   height: 100%;

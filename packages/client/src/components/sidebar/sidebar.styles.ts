@@ -1,5 +1,5 @@
-import { styled } from "@mui/material";
 import LoginBanner from "@assets/loginBackground.jpg";
+import { styled } from "@mui/material";
 
 export const SidebarContainer = styled("div")`
   display: flex;
