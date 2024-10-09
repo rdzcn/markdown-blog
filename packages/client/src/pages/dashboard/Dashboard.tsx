@@ -4,7 +4,7 @@ import { useToast } from "@contexts/toast.context";
 import { Button } from "@mui/material";
 import { fetchTransactions } from "@shared/apis/interceptors";
 import { localizeValue, normalizeData } from "@shared/utils";
-import type { Transaction, TransactionStatus } from "@types/index";
+import type { Transaction, TransactionStatus } from "@@types/index";
 import { format } from "date-fns";
 import {
 	type ChangeEvent,

@@ -4,7 +4,7 @@ import {
 	fetchCurrentUser,
 	fetchUsers,
 } from "@shared/apis/interceptors";
-import type { User } from "@types/index";
+import type { User, RootLoaderResponse } from "@@types/index";
 import { Suspense } from "react";
 import {
 	Navigate,
@@ -34,8 +34,7 @@ const ProtectedRoute = () => {
 	const location = useLocation();
 	const token = localStorage.getItem("token");
 
-	//TODO: type data
-	const data: any = useLoaderData();
+	const data = useLoaderData() as RootLoaderResponse;
 
 	if (!token) {
 		return <Navigate to={"/login"} />;

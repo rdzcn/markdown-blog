@@ -1,4 +1,4 @@
-import path from "path";
+import path from "node:path";
 import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
 
@@ -12,7 +12,7 @@ export default defineConfig({
 		alias: {
 			"@": path.resolve(__dirname, "./src/"),
 			"@assets": `${path.resolve(__dirname, "./src/assets/")}`,
-			"@types": `${path.resolve(__dirname, "../common/types")}`,
+			"@@types": `${path.resolve(__dirname, "../common/types")}`,
 			"@components": `${path.resolve(__dirname, "./src/components/")}`,
 			"@contexts": `${path.resolve(__dirname, "./src/contexts/")}`,
 			"@pages": `${path.resolve(__dirname, "./src/pages")}`,

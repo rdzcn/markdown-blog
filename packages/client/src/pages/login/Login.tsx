@@ -3,7 +3,7 @@ import { useToast } from "@contexts/toast.context";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { TextField } from "@mui/material";
 import { fetchToken } from "@shared/apis/interceptors";
-import type { LoginCredentials } from "@types/Login";
+import type { LoginCredentials } from "@@types/Login";
 import { useForm } from "react-hook-form";
 import { redirect, useNavigate } from "react-router-dom";
 import { z } from "zod";

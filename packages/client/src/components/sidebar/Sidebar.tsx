@@ -1,6 +1,6 @@
 import { Txt } from "@contexts/texts.context";
 import { Avatar, Button } from "@mui/material";
-import type { User } from "@types/index";
+import type { User } from "@@types/index";
 import { useNavigate } from "react-router-dom";
 import {
 	SidebarContainer,

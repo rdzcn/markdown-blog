@@ -1,4 +1,4 @@
-import { Values } from "./helpers";
+import type { Values } from "./helpers";
 
 export const TransactionStatusEnum = {
   Rejected: "REJECTED",

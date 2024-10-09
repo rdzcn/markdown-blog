@@ -9,7 +9,7 @@ import {
 	Paper,
 	Popper,
 } from "@mui/material";
-import type { TransactionStatus } from "@types/index";
+import type { TransactionStatus } from "@@types/index";
 import { useRef, useState } from "react";
 import { Event } from "../dashboard.reducer";
 import { FilterWrapper } from "../dashboard.styles";

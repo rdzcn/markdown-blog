@@ -3,14 +3,14 @@ import type {
 	LoginResponse,
 	SmeResponse,
 	Transaction,
-	TransactionPagination,
 	TransactionStatus,
+	TransactionPagination,
 	User,
-} from "@commonTypes/index";
+} from "@@types/index";
 import axios, { type AxiosRequestConfig } from "axios";
 
 export const axiosInstance = axios.create({
-	baseURL: `http://localhost:3000/`,
+	baseURL: "http://localhost:3000/",
 	timeout: 60000,
 	headers: {
 		"Access-Control-Allow-Origin": "*",
@@ -26,7 +26,7 @@ axiosInstance.interceptors.request.use(
 		if (config.url && !config.url.includes("/login")) {
 			const token = localStorage.getItem("token");
 			if (token) {
-				config.headers["Authorization"] = "Bearer " + token;
+				config.headers.Authorization = `Bearer ${token}`;
 			}
 		}
 		return config;
@@ -42,7 +42,7 @@ axiosInstance.interceptors.response.use(
 		const responseData = response.data;
 		const requestUrl = response.config.url;
 
-		if (requestUrl && requestUrl.includes("/login")) {
+		if (requestUrl?.includes("/login")) {
 			localStorage.setItem("token", responseData.token);
 		}
 		return responseData;
@@ -90,19 +90,19 @@ export function sendPostJson<T, R>(path: string, data?: unknown) {
 
 //API CALLS
 export function fetchToken(loginPayload: LoginCredentials) {
-	return sendPostJson<unknown, LoginResponse>(`/login`, loginPayload);
+	return sendPostJson<unknown, LoginResponse>("/login", loginPayload);
 }
 
 export function fetchCompanyData() {
-	return sendGetJson<unknown, SmeResponse>(`/sme-data`);
+	return sendGetJson<unknown, SmeResponse>("/sme-data");
 }
 
 export function fetchUsers() {
-	return sendGetJson<unknown, User[]>(`/users`);
+	return sendGetJson<unknown, User[]>("/users");
 }
 
 export function fetchCurrentUser() {
-	return sendGetJson<unknown, User>(`/current-user`);
+	return sendGetJson<unknown, User>("/current-user");
 }
 
 export function fetchTransactions(params: {
@@ -112,13 +112,12 @@ export function fetchTransactions(params: {
 	limit?: number;
 }) {
 	const queryStringParams: string[] = [];
-	for (const key in params) {
-		if (params[key as keyof typeof params]) {
-			queryStringParams.push(
-				`${encodeURIComponent(key)}=${encodeURIComponent(params[key as keyof typeof params]!.toString())}`,
-			);
-		}
+	for (const [key, value] of Object.entries(params)) {
+		queryStringParams.push(
+			`${encodeURIComponent(key)}=${encodeURIComponent(`${value}`)}`,
+		);
 	}
+
 
 	return sendGetJson<
 		unknown,

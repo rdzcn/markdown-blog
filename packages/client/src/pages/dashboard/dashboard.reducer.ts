@@ -1,4 +1,4 @@
-import { type Transaction, type TransactionStatus, Values } from "@types/index";
+import { type Transaction, type TransactionStatus, Values } from "@@types/index";
 
 export enum Status {
 	Idle = "idle",

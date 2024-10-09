@@ -18,7 +18,7 @@
 		"paths": {
 			"@/*": ["./src/*"],
 			"@assets/*": ["./src/assets/*"],
-			"@types/*": ["../common/types/*"],
+			"@@types/*": ["../common/types/*"],
 			"@components/*": ["./src/components/*"],
 			"@contexts/*": ["./src/contexts/*"],
 			"@pages/*": ["./src/pages/*"],

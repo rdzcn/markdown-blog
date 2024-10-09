@@ -2,7 +2,7 @@ import { useUsers } from "@components/protectedRoute/ProtectedRoute";
 import { Txt } from "@contexts/texts.context";
 import { Drawer, IconButton } from "@mui/material";
 import { localizeValue, normalizeData } from "@shared/utils";
-import type { Transaction } from "@types/index";
+import type { Transaction } from "@@types/index";
 import { useMemo } from "react";
 import {
 	CloseIcon,
