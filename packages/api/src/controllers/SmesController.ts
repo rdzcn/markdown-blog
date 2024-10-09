@@ -1,5 +1,5 @@
 import { notFound } from '@hapi/boom';
-import { Request, Response } from 'express';
+import type { Request, Response } from 'express';
 import smes from '../data/smes.json';
 
 const getSme = async (req: Request, res: Response) => {

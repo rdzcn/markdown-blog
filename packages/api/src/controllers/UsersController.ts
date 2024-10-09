@@ -1,4 +1,4 @@
-import { Request, Response } from "express";
+import type { Request, Response } from "express";
 import users from "../data/users.json";
 
 const getUsers = (req: Request, res: Response) => {

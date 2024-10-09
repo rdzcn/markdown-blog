@@ -17,20 +17,20 @@ const ArticleForm = () => {
 	}
 
 	return (
-		<form onSubmit={handleSubmit(onSubmit)} className="flex flex-col w-full">
-			<label className="flex h-10 p-2 mb-4" htmlFor="author">
-				<span className="min-w-72">Author</span>
-				<input {...register("author", { required: true })} className="outline ml-4" />
+		<form onSubmit={handleSubmit(onSubmit)} className="flex flex-col max-w-md rounded-md bg-gradient-to-b from-customYellow via-customPurple to-customDarkBlue p-4">
+			<label className="flex h-10 p-2 mb-4 text-white" htmlFor="author">
+				<span className="min-w-24">Author</span>
+				<input {...register("author", { required: true })} className="outline ml-4 flex-1" />
 			</label>
-			<label className="flex h-10 p-2 mb-4" htmlFor="title">
-				<span className="min-w-72">Title</span>
-				<input {...register("title", { required: true })} className="outline ml-4" />
+			<label className="flex h-10 p-2 mb-4 text-white" htmlFor="title">
+				<span className="min-w-24">Title</span>
+				<input {...register("title", { required: true })} className="outline ml-4 flex-1" />
 			</label>
-			<label className="flex h-10 p-2 mb-4" htmlFor="content">
-				<span className="min-w-72">Content</span>
-				<input {...register("content", { required: true })} className="outline ml-4" />
+			<label className="flex h-10 p-2 mb-4 text-white" htmlFor="content">
+				<span className="min-w-24">Content</span>
+				<input {...register("content", { required: true })} className="outline ml-4 flex-1" />
 			</label>
-			<button type="submit" className="">Submit</button>
+			<button type="submit" className="text-white rounded-md border border-white border-solid">Submit</button>
 		</form>
 	);
 }

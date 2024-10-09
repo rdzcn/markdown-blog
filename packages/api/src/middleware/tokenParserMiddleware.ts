@@ -1,10 +1,12 @@
-import { Request, Response, NextFunction } from "express";
+import type { Request, Response, NextFunction } from "express";
 import { badRequest } from "@hapi/boom";
 
-const jwtDecode = (token?: string | string[]): any | null => {
+const jwtDecode = (token?: string | string[]) => {
   if (!token || typeof token !== "string") {
     return null;
   }
+
+  console.log('JWT token', token);
 
   try {
     const base64Payload = token.split(".")[1];
@@ -40,9 +42,9 @@ type ParsedToken = {
  */
 export const extractToken = (req: Request): ParsedToken => {
   const authHeader = req.headers.authorization;
-  let token: string = "";
+  let token= "";
 
-  if (authHeader && authHeader.startsWith("Bearer ")) {
+  if (authHeader?.startsWith("Bearer ")) {
     token = authHeader.substring(7, authHeader.length);
   } else {
     throw badRequest("Expected authorization header");
@@ -69,7 +71,7 @@ export const tokenParserMiddleware = (
     }
     req.body.userData = parsedToken.userData;
     return next();
-  } catch (e: any) {
+  } catch (e) {
     return next(e);
   }
 };

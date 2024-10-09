@@ -6,11 +6,12 @@ import type {
 	TransactionStatus,
 	TransactionPagination,
 	User,
+	Article,
 } from "@@types/index";
 import axios, { type AxiosRequestConfig } from "axios";
 
 export const axiosInstance = axios.create({
-	baseURL: "http://localhost:3000/",
+	baseURL: "http://localhost:5173/",
 	timeout: 60000,
 	headers: {
 		"Access-Control-Allow-Origin": "*",
@@ -113,9 +114,11 @@ export function fetchTransactions(params: {
 }) {
 	const queryStringParams: string[] = [];
 	for (const [key, value] of Object.entries(params)) {
-		queryStringParams.push(
-			`${encodeURIComponent(key)}=${encodeURIComponent(`${value}`)}`,
-		);
+		if (value) {
+			queryStringParams.push(
+				`${encodeURIComponent(key)}=${encodeURIComponent(`${value}`)}`,
+			);
+		}
 	}
 
 
@@ -123,4 +126,8 @@ export function fetchTransactions(params: {
 		unknown,
 		{ data: Transaction[]; meta: TransactionPagination }
 	>(`/transactions?${queryStringParams.join("&")}`);
+}
+
+export function fetchArticles() {
+	return sendGetJson<unknown, Article[]>("/articles");
 }

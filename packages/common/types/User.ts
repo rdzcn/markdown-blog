@@ -12,3 +12,11 @@ export interface RootLoaderResponse {
   users: User[];
   companyData: SmeResponse;
 }
+
+export interface Article {
+  title: string;
+  content: string;
+  authorId: string;
+  id: string;
+  createdAt: string;
+}

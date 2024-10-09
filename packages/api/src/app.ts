@@ -4,12 +4,15 @@ import { serve, setup } from "swagger-ui-express";
 import yaml from "yamljs";
 //env files
 import "dotenv/config";
-import path from "path";
+import path from "node:path";
 import { errorHandler, tokenParserMiddleware } from "./middleware";
-import { AuthController } from "./controllers";
-import { UsersController } from "./controllers/UsersController";
-import { SmesController } from "./controllers/SmesController";
-import { TransactionsController } from "./controllers/TransactionsController";
+import {
+  ArticlesController,
+  AuthController,
+  UsersController,
+  SmesController,
+  TransactionsController
+} from "./controllers";
 
 const app = express();
 app.use(cors());
@@ -29,6 +32,7 @@ app.get(
   tokenParserMiddleware,
   TransactionsController.getTransactions,
 );
+app.get("/articles", tokenParserMiddleware, ArticlesController.getArticles);
 
 app.use(errorHandler);
 console.log("\n 🚀\x1b[33m rdzcn\x1b[90m mock API online\x1b[93m :) \x1b[0m");

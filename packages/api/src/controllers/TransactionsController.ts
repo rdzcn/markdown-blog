@@ -1,8 +1,8 @@
-import { Request, Response } from 'express';
+import type { Request, Response } from 'express';
 import { z } from 'zod';
 import data from '../data/transactions.json';
 import {
-  Transaction,
+  type Transaction,
   TransactionStatusEnum,
 } from '@rdzcn/common/types/Transaction';
 import { validateRequest, numericString } from 'src/lib/validation';

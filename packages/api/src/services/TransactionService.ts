@@ -1,4 +1,4 @@
-import {
+import type {
   Transaction,
   TransactionStatus,
 } from '@rdzcn/common/types/Transaction';
@@ -12,8 +12,8 @@ export class TransactionService {
   status: TransactionStatus | null = null;
 
   // pagination fields
-  limit: number = 10;
-  offset: number = 0;
+  limit = 10;
+  offset = 0;
 
   constructor(data: Transaction[]) {
     this.data = [...data];

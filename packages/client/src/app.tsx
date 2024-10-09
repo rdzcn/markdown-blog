@@ -13,7 +13,7 @@ import ProtectedRoute, {
 } from "./components/protectedRoute/ProtectedRoute";
 import { TextsProvider } from "./contexts/texts.context";
 import { ToastProvider } from "./contexts/toast.context";
-import Articles from "./pages/articles/Articles";
+import Articles, { articlesLoader } from "./pages/articles/Articles";
 import ArticleForm from "./pages/articles/article-form";
 import Dashboard from "./pages/dashboard/Dashboard";
 import Login, { loginLoader } from "./pages/login/Login";
@@ -39,6 +39,7 @@ const router = createBrowserRouter([
 			{
 				path: "articles",
 				element: <Articles />,
+				loader: articlesLoader,
         		children: [
           			{
             			path: "edit/:id",
