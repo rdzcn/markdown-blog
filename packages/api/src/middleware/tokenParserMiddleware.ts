@@ -6,8 +6,6 @@ const jwtDecode = (token?: string | string[]) => {
     return null;
   }
 
-  console.log('JWT token', token);
-
   try {
     const base64Payload = token.split(".")[1];
     const payload = Buffer.from(base64Payload, "base64");

@@ -13,10 +13,15 @@ export interface RootLoaderResponse {
   companyData: SmeResponse;
 }
 
-export interface Article {
+export interface ArticleData {
   title: string;
   content: string;
   authorId: string;
   id: string;
   createdAt: string;
+  author: {
+    name: string;
+    email: string;
+    avatar: string;
+  }
 }

@@ -38,4 +38,7 @@ export default {
 		CARD_NOT_ACTIVE: "Card not active",
 		INCORRECT_PIN: "Incorrect pin",
 	},
+	shared: {
+		readMore: "Read more",
+	}
 };

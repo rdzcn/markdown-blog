@@ -6,7 +6,7 @@ import type {
 	TransactionStatus,
 	TransactionPagination,
 	User,
-	Article,
+	ArticleData,
 } from "@@types/index";
 import axios, { type AxiosRequestConfig } from "axios";
 
@@ -129,5 +129,5 @@ export function fetchTransactions(params: {
 }
 
 export function fetchArticles() {
-	return sendGetJson<unknown, Article[]>("/articles");
+	return sendGetJson<unknown, ArticleData[]>("/articles");
 }

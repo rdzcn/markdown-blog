@@ -279,9 +279,13 @@ const createTransactions = async () => {
 
 const createArticles = async () => {
   const filePath = getPath('articles.json');
+  const modifiedArticles = articles.map((article) => ({...article, createdAt: faker.date.recent(180).toISOString()}));
+  const sortedArticles = modifiedArticles.sort((a, b) =>
+    a.createdAt < b.createdAt ? 1 : -1
+  );
   await fs.writeFile(
     filePath,
-    JSON.stringify(articles, null, 2),
+    JSON.stringify(sortedArticles, null, 2),
     'utf-8'
   );
   console.log(
