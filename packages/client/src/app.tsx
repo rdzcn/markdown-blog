@@ -14,9 +14,10 @@ import ProtectedRoute, {
 import { TextsProvider } from "./contexts/texts.context";
 import { ToastProvider } from "./contexts/toast.context";
 import Articles, { articlesLoader } from "./pages/articles/Articles";
-import ArticleForm from "./pages/articles/article-form";
+import Article, { articleLoader } from "./pages/articles/components/Article";
 import Dashboard from "./pages/dashboard/Dashboard";
 import Login, { loginLoader } from "./pages/login/Login";
+
 import "./main.css";
 
 // Move this to a separate file
@@ -40,12 +41,18 @@ const router = createBrowserRouter([
         path: "articles",
         element: <Articles />,
         loader: articlesLoader,
-        children: [
-          {
-            path: "edit/:id",
-            element: <ArticleForm />,
-          },
-        ],
+        // children: [
+        //   {
+        //     path: ":id",
+        //     loader: articleLoader,
+        //     element: <Article />,
+        //   },
+        // ],
+      },
+      {
+        path: "articles/:id",
+        element: <Article />,
+        loader: articleLoader,
       },
       {
         path: "/*",

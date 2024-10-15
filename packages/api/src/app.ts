@@ -33,6 +33,7 @@ app.get(
   TransactionsController.getTransactions,
 );
 app.get("/articles", tokenParserMiddleware, ArticlesController.getArticles);
+app.get("/articles/:id", tokenParserMiddleware, ArticlesController.getArticle);
 
 app.use(errorHandler);
 console.log("\n 🚀\x1b[33m rdzcn\x1b[90m mock API online\x1b[93m :) \x1b[0m");

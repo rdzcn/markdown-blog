@@ -57,6 +57,9 @@ importers:
       jsonwebtoken:
         specifier: 8.5.1
         version: 8.5.1
+      prettier:
+        specifier: ^3.2.5
+        version: 3.3.3
       ts-node:
         specifier: 10.9.1
         version: 10.9.1(@types/node@18.11.0)(typescript@5.5.4)

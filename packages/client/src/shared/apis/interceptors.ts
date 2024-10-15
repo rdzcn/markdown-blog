@@ -131,3 +131,7 @@ export function fetchTransactions(params: {
 export function fetchArticles() {
 	return sendGetJson<unknown, ArticleData[]>("/articles");
 }
+
+export function fetchArticle(id: string) {
+	return sendGetJson<unknown, ArticleData>(`/articles/${id}`);
+}
