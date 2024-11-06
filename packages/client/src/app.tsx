@@ -1,10 +1,10 @@
-import { CssBaseline } from "@mui/material";
 import {
   Navigate,
   RouterProvider,
   createBrowserRouter,
   redirect,
 } from "react-router-dom";
+import { CssBaseline } from "@mui/material";
 import GlobalStyles from "./assets/styles/global.styles";
 import ErrorBoundary from "./components/errorBoundary/ErrorBoundary";
 import Layout from "./components/layout/Layout";
@@ -20,7 +20,6 @@ import Login, { loginLoader } from "./pages/login/Login";
 
 import "./main.css";
 
-// Move this to a separate file
 const router = createBrowserRouter([
   {
     id: "root",
@@ -41,13 +40,6 @@ const router = createBrowserRouter([
         path: "articles",
         element: <Articles />,
         loader: articlesLoader,
-        // children: [
-        //   {
-        //     path: ":id",
-        //     loader: articleLoader,
-        //     element: <Article />,
-        //   },
-        // ],
       },
       {
         path: "articles/:id",

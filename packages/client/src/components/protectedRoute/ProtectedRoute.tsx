@@ -1,10 +1,3 @@
-import Sidebar from "@/components/sidebar/Sidebar";
-import {
-  fetchCompanyData,
-  fetchCurrentUser,
-  fetchUsers,
-} from "@shared/apis/interceptors";
-import type { User, RootLoaderResponse } from "@@types/index";
 import { Suspense } from "react";
 import {
   Navigate,
@@ -13,6 +6,13 @@ import {
   useLocation,
   useOutletContext,
 } from "react-router-dom";
+import Sidebar from "@/components/sidebar/Sidebar";
+import {
+  fetchCompanyData,
+  fetchCurrentUser,
+  fetchUsers,
+} from "@shared/apis/interceptors";
+import type { User, RootLoaderResponse } from "@@types/index";
 import { ContentWrapper, RouteWrapper } from "./protectedRoute.styles";
 
 type UsersContextType = { currentUser: User | null; users: User[] };

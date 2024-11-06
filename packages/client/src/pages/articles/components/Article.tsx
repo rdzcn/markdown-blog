@@ -23,24 +23,19 @@ export default function Article() {
 
   return (
     articleData && (
-      <article className="rounded-lg bg-background shadow-sm transition-all hover:shadow-md text-black h-80 p-6">
-        <div>
-          <div className="flex flex-col justify-center text-sm text-muted-foreground mb-4">
-            <Txt txtKey={articleData.author.name} className="font-bold" />
-            <Txt txtKey={formatDate(articleData.createdAt)} />
-          </div>
-          <h3 className="text-xl font-bold mb-4">{articleData.title}</h3>
-          <Txt
-            txtKey={articleData.content}
-            className="text-muted-foreground line-clamp-4 !mb-4"
-          />
-          <Link
+      <article className="text-black h-full p-6 max-w-3xl">
+        <div className="flex flex-col justify-center text-sm mb-4">
+          <Txt txtKey={articleData.author.name} className="!font-semibold" />
+          <Txt txtKey={formatDate(articleData.createdAt)} />
+        </div>
+        <h3 className="text-xl font-bold mb-4">{articleData.title}</h3>
+        <Txt txtKey={articleData.content} />
+        {/* <Link
             to={`/articles/${articleData.id}`}
             className="text-primary-foreground"
           >
             <Txt txtKey="shared.readMore" />
-          </Link>
-        </div>
+          </Link> */}
       </article>
     )
   );

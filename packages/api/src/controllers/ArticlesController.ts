@@ -31,10 +31,6 @@ const getArticle = async (req: Request, res: Response) => {
 
   const article = articlesWithAuthor.find((article) => article.id === articleId);
 
-  console.log("---------------------------------------------------------")
-  console.log("Article", article)
-  console.log("---------------------------------------------------------")
-
   if (!article) {
     throw notFound('Article not found');
   }

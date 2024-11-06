@@ -10,7 +10,6 @@ interface ArticleFormData {
 const ArticleForm = () => {
   const { register, handleSubmit } = useForm<ArticleFormData>();
   const params = useParams();
-  console.log("PARAMS,", params);
 
   const onSubmit = (data: ArticleFormData) => {
     console.log("DATA", data);
